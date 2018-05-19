@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content%}
+	<h3 align="center"><b>Today</b></h3>
+	<table class="table">
+	    <thead>
+	      <tr>
+	        <th>Farm ID</th>
+	        <th>Sowing Date</th>
+	        <th>Days</th>
+	        <th>Fertiliser</th>
+	        <th>Quantity</th>
+	        
+	      </tr>
+	    </thead>
+    
+	    <tbody>
+	    	{% if todaydue %}
+		    	{% for i in todaydue %}
+				<tr class="info">
+					<td>{{ i.farm_id }}</td>
+					<td>{{ i.sowingdate }}</td>
+					<td>{{ i.days }}</td>
+					<td>{{ i.fertiliser }}</td>
+					<td>{{ i.quantity }} {{ i.quantity_unit }}</td>
+					
+				</tr>
+				{% endfor %}
+			{% else %}
+				<h4>No due for tomorrow</h4>
+			{% endif %}
+	    </tbody>
+ 	</table>
+  	<h3 align="center"><b>Tomorrow</b></h3>	
+  	<table class="table">
+	    <thead>
+	      <tr>
+	        <th>Farm ID</th>
+	        <th>Sowing Date</th>
+	        <th>Days</th>
+	        <th>Fertiliser</th>
+	        <th>Quantity</th>
+	        
+	      </tr>
+	    </thead>
+    
+	    <tbody>
+	    	{% if tomorrowdue %}
+		    	{% for i in tomorrowdue %}
+				<tr class="info">
+					<td>{{ i.farm_id }}</td>
+					<td>{{ i.sowingdate }}</td>
+					<td>{{ i.days }}</td>
+					<td>{{ i.fertiliser }}</td>
+					<td>{{ i.quantity }} {{ i.quantity_unit }}</td>
+					
+				</tr>
+				{% endfor %}
+			{% else %}
+				<h4>No due for tomorrow</h4>
+			{% endif %}
+	    </tbody>
+  	</table>
+	
+{% endblock %}

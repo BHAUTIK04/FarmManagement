@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Farmer Data</title>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body style="background-color:#7aa93c;">
+  	<nav class="navbar navbar-inverse">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="/">Farm Management</a>
+	    </div>
+	    <ul class="nav navbar-nav">
+	      <li><a href="/">Home</a></li>
+	      <li><a href="/createfarmer">Create Farmer</a></li>
+	      <li><a href="/createfarm">Create Farm</a></li>
+	      <li><a href="/createschedule">Create Schedule</a></li>
+	      <li><a href="/listallfarmer">List all Farmer</a></li>
+	      <li><a href="/listallfarm">List all Farm</a></li>
+	      <li><a href="/due">All Due</a></li>
+	      
+	    </ul>
+	  </div>
+	</nav>
+    <div class="container" style="margin-top:10px;">
+	    
+		{% block content %}
+		{% endblock %}
+		{% if messages %}
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+        {% endif %}
+	</div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+ 
+  </body>
+</html>

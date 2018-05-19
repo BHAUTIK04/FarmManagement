@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+		<table class="table">
+    <thead>
+      <tr>
+        <th>Farmer ID</th>
+        <th>Farmer Name</th>
+        <th>Phone</th>
+        <th>Language</th>
+        <th>Farm ID</th>
+        <th>Farm Village</th>
+        <th>Farm Area</th>
+        <th>Crop</th>
+      </tr>
+    </thead>
+    
+    <tbody>
+    	{% for i in farmer %}
+    		<tr class="info">
+	        	<td>{{ i.farmer_id }}</td>
+	        	<td>{{ i.farmer_name }}</td>
+	        	<td>{{ i.farmer_phone }}</td>
+	        	<td>{{ i.village }}</td>
+	        	<td>{{ i.id }}</td>
+	        	<td>{{ i.village }}</td>
+	        	<td>{{ i.area }}</td>
+	        	<td>{{ i.crop }}</td>
+	        	<!-- <td>{{ i.area }}</td> -->
+	      	</tr>
+    	{% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
